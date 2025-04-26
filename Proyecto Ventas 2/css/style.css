@@ -1,0 +1,245 @@
+/* Variables */
+:root{
+    --primario: #f086d9;
+    --primarioOscuro: #fa61ff;
+    --secundario: #050000;
+    --secundarioOscuro: rgb(230, 76, 178);
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --fuentePrincipal: 'sans-serif', cursive;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/* Globales ***********************************/
+body{
+    background-color: var(--primario);/* Color de fondo de la página */
+    font-size: 1.6rem; /* Tamaño del texto de la página 16px */
+    line-height: 1.5; /* interlineado, de la base fuente. */
+}
+p{
+    font-size: 1.8rem; /* Tamaño de la letra */
+    font-family: Arial, Helvetica, sans-serif; /* Tipo de letra */
+    color: var(--blanco);
+}
+a{
+    text-decoration: none; /* Quitar el decorado del enlace */
+}
+img{
+    max-width: 100%; /* ancho de las imagenes original */
+    /* width: 100%;  abarca todo el ancho de la pantalla*/
+    border-radius: 10%;
+}
+.contenedor{
+    max-width: 120rem; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrado del contenedor */
+}
+h1, h2, h3{
+    .
+    text-align: center; /* Alineación del texto = centrado */
+    color: var(--secundario); /* Color del texto */
+    font-family: var(--fuentePrincipal); /* Tipo de letra */
+}
+h1{
+    font-size: 4rem; /* Tamaño de la letra */
+}
+h2{
+    font-size: 3.2rem; /* Tamaño de la letra */
+}
+h3{
+    font-size: 2.4rem; /* Tamaño de la letra */
+} 
+/* Header ***********************************************/
+.header{
+    display: flex; /* Habilita justify-content */
+    justify-content: center; /* Alineación del objeto */
+}
+.header__logo{
+    margin: 3rem 0 3rem 0; /* Margen que rodea el objeto */
+    border-radius: 15%; /* Redondea las esquinas de la imagen */
+}
+/* Navegación *******************************************/
+.navegacion{
+    background-color: var(--primarioOscuro); /* Color de fondo */
+    padding: 1rem 0 1rem 0; /* Relleno alrededor del objeto */
+    display: flex; /* Habilita justify-content */
+    justify-content: center; /* Alineación del objeto */
+    gap: 2rem; /* Separación de los elementos */
+}
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal); /* Tipo de letra */
+    color: var(--blanco); /* Color de la letra */
+    font-size: 3rem; /* Tamaño de la letra */
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario); /* Color cuando se coloca el puntero del ratón */
+}
+/* Grid ****************************************************/
+@media (min-width: 0px){/*para tamaños mobilea*/
+    .grid{
+        display: grid;/*habilita la disposicion en columnas*/
+        grid-template-columns: 1fr;/*cuantas columnas se van a usar=1 */
+        gap: 2re;/* espacio entre columnas*/
+    }
+}
+@media (min-width: 480px){ /* Para tamaños superiores a un telefono */
+    .grid{
+        
+        grid-template-columns: repeat(2, 1fr);/* Cuantas columnas se van a usar = 2 */
+    }
+}
+@media (min-width: 780px){/* Para tamaños superiores a una tablet */
+    .grid{
+        grid-template-columns: repeat(3, 1fr);/* Cuantas columnas se van a usar = 3 */
+    }
+}
+/* Productos ***********************************************/
+.producto{
+    background-color: var(--primarioOscuro);/* Color de fondo */
+    padding: 1rem; /* Relleno alrededor de la imagen */
+}
+.producto__nombre{
+    font-size: 4rem; /* Tamaño de la letra */
+}
+.producto__precio{
+    font-size: 2.8rem; /* Tamaño de la letra */
+    color: var(--secundario); /* Color de la letra */
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuentePrincipal); /* Tipo de letra */
+    margin: 1rem 0;/* Margen que rodea el objeto */
+    text-align: center;/* Alineación del texto = centrado */
+    line-height: 1.2;/* Interlineado */
+}
+/*Graficos *************************************************/
+.grafico{
+    min-height: 30rem;/* altura minima*/
+    background-repeat: no-repeat ;/* para no repetir la imagen*/
+    background-size: cover; /*para que la imagen cubra todo el espacio*/
+
+}
+@media (min-width: 0px){ /*tamaño movil*/
+.grafico__camisas{
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.png);
+}
+.grafico__camisas2{
+    grid-row: 8/9;/*linea vertical 8 a 9*/
+    background-image: url(../img/grafico2.png);
+    border-radius: 10%;
+}
+}
+@media (min-width:480px){ /* para tamaños mayores a un  telefono=tablet*/
+.grafico__camisas{
+    grid-row: 2/3;/*fila vertical 2 al 3*/
+    grid-column: 1/3;/* columna horizontal 1 al 3*/
+    border-radius: 10%;
+}
+.grafico__camisas2{
+    grid-row: 8/9;/* fila vertical 8 al 9*/
+    grid-column: 1/3;/* columna horizontal de 1 al 3*/
+}
+}
+@media (min-width:768px){ /*para dispositivos grandes= a a una laptop de mayor tamaño*/
+.grafico__camisas2{
+    grid-row: 5/6;
+    grid-column: 2/4;
+}
+}
+/* Footer **************************************************/
+.footer{
+    background-color: var(--primarioOscuro); /* Color de fondo */
+    padding: 1rem 0 1rem 0; /* Relleno del objeto */
+    margin-top: 2rem; /* Margen superior */
+}
+.footer__texto{
+    font-family: var(--fuentePrincipal); /* Tipo de letra */
+    text-align: center; /* Alineación del texto */
+    font-size: 2.2rem; /* Tamaño de la letra */
+}
+/*nosotros **************************/
+.nosotros{
+    display: grid;/*habilitar para colocar en columnas*/
+    grid-template-rows: repeat(2, auto);/* cuantas filas se usan= 2*/
+}
+@media (min-width: 768px){
+    .nosotros{
+        grid-template-columns: repeat(2,1fr);/*cuantas columnas se usan*/
+        column-gap: 2rem;/*espacio entre col.umnas*/
+    }
+}
+.nosotros__imagen{
+grid-row: 1/2 ;/*ubicacion de la imagen*/
+@media (min-width: 768px){
+    .nosotros__imagen{
+        grid-column: 2/3;/* ubicacion de la pantalla*/
+    }
+}
+/*Bloques nosotros *****************/
+.bloques{
+    display: grid;/*para colocar el espacio asignado en columnas*/
+    grid-column: repeat(2, 1fr);/*para indicar cuantas columnas usar=2*/
+    gap: 2rem;/* espacio asignado enytre columnas*/
+
+}
+@media (min-width: 768px){
+    .bloques{
+        grid-template-columns: repeat(4,1fr);/* cuantas columnas=4*/
+    }
+}
+.bloque{
+}
+
+text-align: center;/*alineacion del texto=centrado*/
+}
+.bloque__titulo{
+margin: 0;/*margen del titulo= 0*/
+}
+/* pagina del producto *******************/
+@media (min-width: 768px){
+    .camisa{
+        display: grid;/* visualizacion en dos columnas*/
+        grid-template-columns: repeat(2, 1fr);/* vista en 2 culumnas*/
+        column-gap: 2rem;/*espacio entre dos columnas*/
+
+    }
+}
+.formulario{
+display: grid;/* visualizacion encolumnas*/
+grid-template-columns: 50% 50%;/* vistra en dos columnas*/
+gap: 2rem;/* espacio ente columnas*/
+}
+.formulario__campo{
+    border: 1rem solid var(--primarioOscuro);/* borde al rededor del campo*/
+    background-color: transparent;/* usa el color de fondo */
+    font-size: 2rem;/* tamaño de la letra */
+    font-family: Arial, Helvetica, sans-serif;/* tipo de letra */
+    padding: 1rem;/* relleno entre objetos*/
+    appearance: none;/* quita adornos*/
+}
+.formulario__submit{
+    background-color: var(--secundario);/* color de fondo del boton*/
+    border: none;/*quitar borde del boton*/
+    font-size: 2rem;/*tamaño de la  letra*/
+    font-family: var(--fuentePrincipal);/* tipo de letra*/
+    padding: 2rem;/* relleno al rededor del elemento*/
+    grid-column: 1/3;/*epacio que abarca el boton*/
+    transition: backgroun-color  3.ease ;
+
+}
+.formulario__submit:hover{
+cursor: pointer;
+background-color: var(--secundarioOscuro); 
+}
+.camisa__imagen{
+    width: 100%;
+}
